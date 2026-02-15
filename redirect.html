@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Установка...</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f5f5f7; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+        .card { background: white; padding: 48px; border-radius: 32px; box-shadow: 0 30px 40px rgba(0,0,0,0.1); max-width: 500px; }
+        h1 { font-size: 32px; margin-bottom: 16px; }
+        p { color: #515154; font-size: 18px; margin-bottom: 24px; }
+        .spinner { border: 6px solid #e4e4e7; border-top: 6px solid #0071e3; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .note { font-size: 14px; color: #86868b; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Установка запущена</h1>
+        <p>Пожалуйста, не закрывайте страницу и держите устройство подключённым к интернету. Это займёт 3–4 часа.</p>
+        <div class="spinner"></div>
+        <p class="note">Мы отправим уведомление на ваш email, когда всё будет готово.</p>
+    </div>
+
+    <!-- Автоматический редирект на главную через 4 часа (шутка, но можно поставить 1 сек для теста) -->
+    <!-- <meta http-equiv="refresh" content="14400;url=index.html"> -->
+    <!-- Для теста: -->
+    <meta http-equiv="refresh" content="5;url=index.html">
+</body>
+</html>
